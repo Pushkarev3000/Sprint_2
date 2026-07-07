@@ -1,6 +1,5 @@
 class EmployeeSalary():
     hourly_payment = 400
-    money = 0
 
     def __init__(self, name, hours, rest_days, email):
         self.name = name
@@ -26,13 +25,3 @@ class EmployeeSalary():
 
     def salary(self):
         return self.hours * self.hourly_payment
-    
-emp = EmployeeSalary.get_hours("Ivan", rest_days=2)
-print(emp.hours)          
-print(emp.salary())
-
-emp_with_email = EmployeeSalary.get_email("Maria")
-print(emp_with_email.email)
-
-EmployeeSalary.set_hourly_payment(500)
-print(emp.salary())
