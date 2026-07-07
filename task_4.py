@@ -1,4 +1,5 @@
-class EmployeeSalary():
+class EmployeeSalary:
+
     hourly_payment = 400
 
     def __init__(self, name, hours, rest_days, email):
@@ -25,3 +26,15 @@ class EmployeeSalary():
 
     def salary(self):
         return self.hours * self.hourly_payment
+    
+emp = EmployeeSalary.get_hours("Ivan", rest_days=2)
+print(emp.hours)          # 40 (потому что (7-2)*8)
+print(emp.salary())       # 16000 (40 * 400)
+
+# Генерируем email, если он не задан
+emp_with_email = EmployeeSalary.get_email("Maria")
+print(emp_with_email.email)  # Maria@email.com
+
+# Меняем ставку оплаты
+EmployeeSalary.set_hourly_payment(500)
+print(emp.salary())       # Тепе
